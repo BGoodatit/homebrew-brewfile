@@ -155,70 +155,70 @@ cask "tor-browser"
 cask "warp"
 cask "whatsapp"
 cask "wireshark"
-mas "Address Book Clearout", id: 442397431
-mas "Adobe Lightroom", id: 1451544217
-mas "AI Chat Bot", id: 6447312365
-mas "Apple Configurator", id: 1037126344
-mas "Betternet VPN", id: 1028905953
-mas "Boop", id: 1518425043
-mas "Brand Identity - Stylescape", id: 6449970704
-mas "Canva", id: 897446215
-mas "CapCut", id: 1500855883
-mas "Clockology", id: 1456386228
-mas "CloudMounter", id: 1130254674
-mas "Codye", id: 1516894961
-mas "Color Widgets", id: 1531594277
-mas "com.xavyx.Easy-Face-Blur", id: 6476814377
-mas "CopyClip", id: 595191960
-mas "Craft", id: 1487937127
-mas "Create Custom Symbols", id: 6476924627
-mas "Crypto Pro", id: 980888073
-mas "Developer", id: 640199958
-mas "Essentials", id: 1588151344
-mas "Faviconer", id: 923463607
-mas "Grammarly for Safari", id: 1462114288
-mas "Hype 4", id: 1460330618
-mas "iMazing Profile Editor", id: 1487860882
-mas "iMovie", id: 408981434
-mas "Keynote", id: 409183694
-mas "Logo Maker", id: 1602158108
-mas "Logo Maker & Creator", id: 6445850897
-mas "Logo Maker - Design Monogram", id: 1369145272
-mas "MacFamilyTree 9", id: 1458866808
-mas "Magnet", id: 441258766
-mas "Messenger", id: 1480068668
-mas "Microsoft Excel", id: 462058435
-mas "Microsoft OneNote", id: 784801555
-mas "Microsoft Outlook", id: 985367838
-mas "Microsoft PowerPoint", id: 462062816
-mas "Microsoft Word", id: 462054704
-mas "Model Pro", id: 1464222390
-mas "MouseBoost", id: 1551462255
-mas "Noir", id: 1592917505
-mas "Numbers", id: 409203825
-mas "OTP Auth", id: 1471867429
-mas "Pages", id: 409201541
-mas "Parallels Client", id: 600925318
-mas "Parallels Desktop", id: 1085114709
-mas "PayPal Honey", id: 1472777122
-mas "Picture Collage Maker 3 Lite", id: 715483615
-mas "Pixelmator Pro", id: 1289583905
-mas "Redirect Web for Safari", id: 1571283503
-mas "Remote Mouse", id: 403195710
-mas "Service Station", id: 1503136033
-mas "Shopping for Amazon", id: 1095562398
-mas "SiteSucker", id: 442168834
-mas "Sparkle", id: 863015334
-mas "Sticklets", id: 1633701470
-mas "Sticky Notes", id: 1150887374
-mas "Templates for Pixelmator", id: 1082989794
-mas "TestFlight", id: 899247664
-mas "The Unarchiver", id: 425424353
-mas "Transcribe", id: 1241342461
-mas "Transporter", id: 1450874784
-mas "Twitter", id: 1482454543
-mas "Universe", id: 1211437633
-mas "Xcode", id: 497799835
+mas install 442397431 # Address Book Clearout
+mas install 1451544217 # Adobe Lightroom
+mas install 6447312365 # AI Chat Bot
+mas install 1037126344 # Apple Configurator
+mas install 1028905953 # Betternet VPN
+mas install 1518425043 # Boop
+mas install 6449970704 # Brand Identity - Stylescape
+mas install 897446215 # Canva
+mas install 1500855883 # CapCut
+mas install 1456386228 # Clockology
+mas install 1130254674 # CloudMounter
+mas install 1516894961 # Codye
+mas install 1531594277 # Color Widgets
+mas install 6476814377 # com.xavyx.Easy-Face-Blur
+mas install 595191960 # CopyClip
+mas install 1487937127 # Craft
+mas install 6476924627 # Create Custom Symbols
+mas install 980888073 # Crypto Pro
+mas install 640199958 # Developer
+mas install 1588151344 # Essentials
+mas install 923463607 # Faviconer
+mas install 1462114288 # Grammarly for Safari
+mas install 1460330618 # Hype 4
+mas install 1487860882 # iMazing Profile Editor
+mas install 408981434 # iMovie
+mas install 409183694 # Keynote
+mas install 1602158108 # Logo Maker
+mas install 6445850897 # Logo Maker & Creator
+mas install 1369145272 # Logo Maker - Design Monogram
+mas install 1458866808 # MacFamilyTree 9
+mas install 441258766 # Magnet
+mas install 1480068668 # Messenger
+mas install 462058435 # Microsoft Excel
+mas install 784801555 # Microsoft OneNote
+mas install 985367838 # Microsoft Outlook
+mas install 462062816 # Microsoft PowerPoint
+mas install 462054704 # Microsoft Word
+mas install 1464222390 # Model Pro
+mas install 1551462255 # MouseBoost
+mas install 1592917505 # Noir
+mas install 409203825 # Numbers
+mas install 1471867429 # OTP Auth
+mas install 409201541 # Pages
+mas install 600925318 # Parallels Client
+mas install 1085114709 # Parallels Desktop
+mas install 1472777122 # PayPal Honey
+mas install 715483615 # Picture Collage Maker 3 Lite
+mas install 1289583905 # Pixelmator Pro
+mas install 1571283503 # Redirect Web for Safari
+mas install 403195710 # Remote Mouse
+mas install 1503136033 # Service Station
+mas install 1095562398 # Shopping for Amazon
+mas install 442168834 # SiteSucker
+mas install 863015334 # Sparkle
+mas install 1633701470 # Sticklets
+mas install 1150887374 # Sticky Notes
+mas install 1082989794 # Templates for Pixelmator
+mas install 899247664 # TestFlight
+mas install 425424353 # The Unarchiver
+mas install 1241342461 # Transcribe
+mas install 1450874784 # Transporter
+mas install 1482454543 # Twitter
+mas install 1211437633 # Universe
+mas install 497799835 # Xcode
 vscode "ahkohd.glance"
 vscode "akvelonprimary.autocomment"
 vscode "alefragnani.bookmarks"
