@@ -37,12 +37,16 @@ sleep(5)
 # Homebrew Update and Taps
 tap "homebrew/core"
 tap "homebrew/cask"
-tap "homebrew/services", force_auto_update: true
-tap "homebrew/bundle", force_auto_update: true
-tap "powershell/tap", force_auto_update: true
-tap "homebrew/cask-fonts", force_auto_update: true
-tap "powershell/tap", force_auto_update: true
-tap "felixkratz/formulae",  force_auto_update: true
+tap "homebrew/services" 
+tap "homebrew/bundle" 
+tap "powershell/tap" 
+tap "homebrew/cask-fonts" 
+tap "powershell/tap", 
+tap "felixkratz/formulae"
+tap "homebrew/autoupdate"   
+tap "homebrew/bundle"         # [https://github.com/Homebrew/homebrew-bundle]
+tap "homebrew/cask-fonts"     # [https://github.com/Homebrew/homebrew-cask-fonts]
+tap "homebrew/services"       # [https://github.com/Homebrew/homebrew-services]
 
 # Set global arguments for all 'brew install --cask' commands
 cask_args appdir: "~/Applications", require_sha: true
