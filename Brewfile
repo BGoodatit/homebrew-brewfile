@@ -1,23 +1,37 @@
 
-# Basic System Info and Homebrew Status
-hb = `#{brew_prefix}/bin/brew -v`
+require 'date'
+
+# brew version
+hb = `brew -v`
+# bash version
 bv = `bash -c 'echo $BASH_VERSION'`
 sh = `echo $SHELL`
-now = DateTime.now.strftime("%B %d %Y")
-au = ENV.fetch("HOMEBREW_AUTO_UPDATE_COMMAND", "false")
-status = au != "false" ? "True" : "False"
-abort("ERROR: Homebrew does not appear to be installed!") unless hb.include? "Homebrew"
+# current date
+now = DateTime.now
+now.strftime("%B %d %Y")
+# auto-update status
+au = ENV.fetch("HOMEBREW_AUTO_UPDATE_COMMAND")
+status = au ? "True" : "False"
+
+# fail if Homebrew is not installed, (or if it's not in $PATH)
+if !hb.include? "Homebrew"
+  abort("ERROR: Homebrew does not appear to be installed!")
+end
+
+# display some basic system env information
 puts("--------------------------------")
-puts("HOMEBREW_PRODUCT    : " + ENV.fetch("HOMEBREW_PRODUCT", "Unknown"))
-puts("HOMEBREW_SYSTEM     : " + ENV.fetch("HOMEBREW_SYSTEM", "Unknown"))
-puts("HOMEBREW_OS_VERSION : " + ENV.fetch("HOMEBREW_OS_VERSION", "Unknown"))
-puts("HOMEBREW_VERSION    : " + ENV.fetch("HOMEBREW_VERSION", "Unknown"))
-puts("HOMEBREW_PROCESSOR  : " + ENV.fetch("HOMEBREW_PROCESSOR", "Unknown"))
+puts("HOMEBREW_PRODUCT    : " + ENV.fetch("HOMEBREW_PRODUCT"))
+puts("HOMEBREW_SYSTEM     : " + ENV.fetch("HOMEBREW_SYSTEM"))
+puts("HOMEBREW_OS_VERSION : " + ENV.fetch("HOMEBREW_OS_VERSION"))
+puts("HOMEBREW_VERSION    : " + ENV.fetch("HOMEBREW_VERSION"))
+puts("HOMEBREW_PROCESSOR  : " + ENV.fetch("HOMEBREW_PROCESSOR"))
 puts("AUTO_UPDATE_ENABLED : " + status + " (" + au + ")")
 puts("BASH_VERSION        : " + bv)
 puts("CURRENT_USER_SHELL  : " + sh)
 puts("--------------------------------")
 puts("\n")
+
+# give us time to CTRL-C
 sleep(5)
 
 # Homebrew Update and Taps
