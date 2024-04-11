@@ -1,37 +1,31 @@
-
 require 'date'
 
-# brew version
-hb = `brew -v`
-# bash version
-bv = `bash -c 'echo $BASH_VERSION'`
-sh = `echo $SHELL`
-# current date
-now = DateTime.now
-now.strftime("%B %d %Y")
-# auto-update status
-au = ENV.fetch("HOMEBREW_AUTO_UPDATE_COMMAND")
-status = au ? "True" : "False"
+# Fetch versions and environment details
+brew_version = `brew -v`.strip
+bash_version = `bash -c 'echo $BASH_VERSION'`.strip
+user_shell = `echo $SHELL`.strip
 
-# fail if Homebrew is not installed, (or if it's not in $PATH)
-if !hb.include? "Homebrew"
-  abort("ERROR: Homebrew does not appear to be installed!")
-end
+# Current date
+current_date = DateTime.now.strftime("%B %d %Y")
 
-# display some basic system env information
-puts("--------------------------------")
-puts("HOMEBREW_PRODUCT    : " + ENV.fetch("HOMEBREW_PRODUCT"))
-puts("HOMEBREW_SYSTEM     : " + ENV.fetch("HOMEBREW_SYSTEM"))
-puts("HOMEBREW_OS_VERSION : " + ENV.fetch("HOMEBREW_OS_VERSION"))
-puts("HOMEBREW_VERSION    : " + ENV.fetch("HOMEBREW_VERSION"))
-puts("HOMEBREW_PROCESSOR  : " + ENV.fetch("HOMEBREW_PROCESSOR"))
-puts("AUTO_UPDATE_ENABLED : " + status + " (" + au + ")")
-puts("BASH_VERSION        : " + bv)
-puts("CURRENT_USER_SHELL  : " + sh)
-puts("--------------------------------")
-puts("\n")
+# Auto-update status
+auto_update_command = ENV.fetch("HOMEBREW_AUTO_UPDATE_COMMAND", nil)
+auto_update_status = auto_update_command ? "Enabled" : "Disabled"
 
-# give us time to CTRL-C
+# Abort if Homebrew is not installed or not found in $PATH
+abort("ERROR: Homebrew does not appear to be installed!") unless brew_version.include?("Homebrew")
+
+# Display system and Homebrew information
+puts "--------------------------------"
+puts "Homebrew version: #{brew_version}"
+puts "Homebrew system information:"
+system "brew config"
+puts "Auto-update status: #{auto_update_status} (Command: #{auto_update_command})"
+puts "Bash version: #{bash_version}"
+puts "Current user shell: #{user_shell}"
+puts "--------------------------------\n"
+
+# Pause for potential cancellation
 sleep(5)
 
 # Homebrew Update and Taps
