@@ -174,74 +174,74 @@ cask "whatsapp"
 cask "wireshark"
 
 # Mac App Store Installations
-mas "Microsoft Excel", id: "462058435"
-mas "Microsoft OneNote", id: "784801555"
-mas "CapCut", id: "1500855883"
-mas "Twitter", id: "1482454543"
-mas "Transporter", id: "1450874784"
-mas "SiteSucker", id: "442168834"
-mas "Grammarly for Safari", id: "1462114288"
-mas "Boop", id: "1518425043"
-mas "Canva", id: "897446215"
-mas "Brand Identity - Stylescape", id: "6449970704"
-mas "TestFlight", id: "899247664"
-mas "Shopping for Amazon", id: "1095562398"
-mas "Service Station", id: "1503136033"
-mas "Sticky Notes", id: "1150887374"
-mas "Faviconer", id: "923463607"
-mas "Apple Configurator", id: "1037126344"
-mas "Logo Maker - Design Monogram", id: "1369145272"
-mas "Microsoft PowerPoint", id: "462062816"
-mas "Parallels Desktop", id: "1085114709"
-mas "Redirect Web for Safari", id: "1571283503"
-mas "Developer", id: "640199958"
-mas "iMovie", id: "408981434"
-mas "Logo Maker & Creator", id: "6445850897"
-mas "Kiano", id: "1413833786"
-mas "Microsoft Outlook", id: "985367838"
-mas "OTP Auth", id: "1471867429"
-mas "Sticklets", id: "1633701470"
-mas "Remote Mouse", id: "403195710"
-mas "Model Pro", id: "1464222390"
-mas "Betternet VPN", id: "1028905953"
-mas "Messenger", id: "1480068668"
-mas "PayPal Honey", id: "1472777122"
-mas "AI Chat Bot", id: "6447312365"
-mas "CloudMounter", id: "1130254674"
-mas "Address Book Clearout", id: "442397431"
-mas "EnhanceFox", id: "1544212575"
-mas "Craft", id: "1487937127"
-mas "iMazing Profile Editor", id: "1487860882"
-mas "Xcode", id: "497799835"
-mas "Codye", id: "1516894961"
-mas "Parallels Client", id: "600925318"
-mas "Templates for Pixelmator", id: "1082989794"
-mas "Logo Maker", id: "1602158108"
-mas "Hype 4", id: "1460330618"
-mas "Create Custom Symbols", id: "6476924627"
-mas "Pages", id: "409201541"
-mas "MouseBoost", id: "1551462255"
-mas "Hand Mirror", id: "1502839586"
-mas "Numbers", id: "409203825"
-mas "com.xavyx.Easy-Face-Blur", id: "6476814377"
-mas "Noir", id: "1592917505"
-mas "The Unarchiver", id: "425424353"
-mas "Microsoft Word", id: "462054704"
-mas "Pixelmator Pro", id: "1289583905"
-mas "Essentials", id: "1588151344"
-mas "Transcribe", id: "1241342461"
-mas "FinderX", id: "6466177414"
-mas "CopyClip", id: "595191960"
-mas "Magnet", id: "441258766"
-mas "Keynote", id: "409183694"
-mas "Crypto Pro", id: "980888073"
-mas "MacFamilyTree 9", id: "1458866808"
-mas "Clockology", id: "1456386228"
-mas "Sparkle", id: "863015334"
-mas "Universe", id: "1211437633"
-mas "Picture Collage Maker 3 Lite", id: "715483615"
-mas "Color Widgets", id: "1531594277"
-mas "Adobe Lightroom", id: "1451544217"
+mas "Microsoft Excel", id: 462058435
+mas "Microsoft OneNote", id: 784801555
+mas "CapCut", id: 1500855883
+mas "Twitter", id: 1482454543
+mas "Transporter", id: 1450874784
+mas "SiteSucker", id: 442168834
+mas "Grammarly for Safari", id: 1462114288
+mas "Boop", id: 1518425043
+mas "Canva", id: 897446215
+mas "Brand Identity - Stylescape", id: 6449970704
+mas "TestFlight", id: 899247664
+mas "Shopping for Amazon", id: 1095562398
+mas "Service Station", id: 1503136033
+mas "Sticky Notes", id: 1150887374
+mas "Faviconer", id: 923463607
+mas "Apple Configurator", id: 1037126344
+mas "Logo Maker - Design Monogram", id: 1369145272
+mas "Microsoft PowerPoint", id: 462062816
+mas "Parallels Desktop", id: 1085114709
+mas "Redirect Web for Safari", id: 1571283503
+mas "Developer", id: 640199958
+mas "iMovie", id: 408981434
+mas "Logo Maker & Creator", id: 6445850897
+mas "Kiano", id: 1413833786
+mas "Microsoft Outlook", id: 985367838
+mas "OTP Auth", id: 1471867429
+mas "Sticklets", id: 1633701470
+mas "Remote Mouse", id: 403195710
+mas "Model Pro", id: 1464222390
+mas "Betternet VPN", id: 1028905953
+mas "Messenger", id: 1480068668
+mas "PayPal Honey", id: 1472777122
+mas "AI Chat Bot", id: 6447312365
+mas "CloudMounter", id: 1130254674
+mas "Address Book Clearout", id: 442397431
+mas "EnhanceFox", id: 1544212575
+mas "Craft", id: 1487937127
+mas "iMazing Profile Editor", id: 1487860882
+mas "Xcode", id: 497799835
+mas "Codye", id: 1516894961
+mas "Parallels Client", id: 600925318
+mas "Templates for Pixelmator", id: 1082989794
+mas "Logo Maker", id: 1602158108
+mas "Hype 4", id: 1460330618
+mas "Create Custom Symbols", id: 6476924627
+mas "Pages", id: 409201541
+mas "MouseBoost", id: 1551462255
+mas "Hand Mirror", id: 1502839586
+mas "Numbers", id: 409203825
+mas "com.xavyx.Easy-Face-Blur", id: 6476814377
+mas "Noir", id: 1592917505
+mas "The Unarchiver", id: 425424353
+mas "Microsoft Word", id: 462054704
+mas "Pixelmator Pro", id: 1289583905
+mas "Essentials", id: 1588151344
+mas "Transcribe", id: 1241342461
+mas "FinderX", id: 6466177414
+mas "CopyClip", id: 595191960
+mas "Magnet", id: 441258766
+mas "Keynote", id: 409183694
+mas "Crypto Pro", id: 980888073
+mas "MacFamilyTree 9", id: 1458866808
+mas "Clockology", id: 1456386228
+mas "Sparkle", id: 863015334
+mas "Universe", id: 1211437633
+mas "Picture Collage Maker 3 Lite", id: 715483615
+mas "Color Widgets", id: 1531594277
+mas "Adobe Lightroom", id: 1451544217
 
 # VSCode Extensions Installation
 vscode "ahkohd.glance"
