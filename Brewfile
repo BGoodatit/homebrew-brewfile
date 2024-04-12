@@ -1,14 +1,36 @@
+
+# Basic System Info and Homebrew Status
+hb = `#{brew_prefix}/bin/brew -v`
+bv = `bash -c 'echo $BASH_VERSION'`
+sh = `echo $SHELL`
+now = DateTime.now.strftime("%B %d %Y")
+au = ENV.fetch("HOMEBREW_AUTO_UPDATE_COMMAND", "false")
+status = au != "false" ? "True" : "False"
+abort("ERROR: Homebrew does not appear to be installed!") unless hb.include? "Homebrew"
+puts("--------------------------------")
+puts("HOMEBREW_PRODUCT    : " + ENV.fetch("HOMEBREW_PRODUCT", "Unknown"))
+puts("HOMEBREW_SYSTEM     : " + ENV.fetch("HOMEBREW_SYSTEM", "Unknown"))
+puts("HOMEBREW_OS_VERSION : " + ENV.fetch("HOMEBREW_OS_VERSION", "Unknown"))
+puts("HOMEBREW_VERSION    : " + ENV.fetch("HOMEBREW_VERSION", "Unknown"))
+puts("HOMEBREW_PROCESSOR  : " + ENV.fetch("HOMEBREW_PROCESSOR", "Unknown"))
+puts("AUTO_UPDATE_ENABLED : " + status + " (" + au + ")")
+puts("BASH_VERSION        : " + bv)
+puts("CURRENT_USER_SHELL  : " + sh)
+puts("--------------------------------")
+puts("\n")
+sleep(5)
+
 tap "homebrew/core"
 tap "homebrew/cask"
-tap "homebrew/services" 
-tap "homebrew/bundle" 
-tap "powershell/tap" 
-tap "homebrew/cask-fonts" 
+tap "homebrew/services"
+tap "homebrew/bundle"
+tap "homebrew/cask-fonts"
 tap "powershell/tap"
-tap "homebrew/autoupdate"   
-tap "homebrew/bundle"        
-tap "homebrew/cask-fonts"    
-tap "homebrew/services"      
+
+# Set global arguments for all 'brew install --cask' commands
+cask_args appdir: "~/Applications", require_sha: true
+
+# Unix Tools Installation
 brew "git"
 brew "wget"
 brew "curl"
@@ -121,9 +143,9 @@ brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 brew "felixkratz/formulae/sketchybar"
 brew "powershell/tap/powershell"
-cask_args appdir: "~/Applications" #require_sha:true
+
+# Cask Applications Installation
 cask "google-chrome"
-cask "firefox-developer-edition"
 cask "visual-studio-code"
 cask "slack"
 cask "spotify"
@@ -167,70 +189,74 @@ cask "tor-browser"
 cask "warp"
 cask "whatsapp"
 cask "wireshark"
-mas install 442397431 # Address Book Clearout 2.1.10
-mas install 1451544217 # Adobe Lightroom 7.2
-mas install 6447312365 # AI Chat Bot 14.1.2
-mas install 1037126344 # Apple Configurator 2.17
-mas install 1028905953 # Betternet VPN 3.6.0
-mas install 1518425043 # Boop 1.4.0
-mas install 6449970704 # Brand Identity - Stylescape 1.0
-mas install 897446215 # Canva 1.84.0
-mas install 1500855883 # CapCut 3.7.0
-mas install 1456386228 # Clockology 1.4.8
-mas install 1130254674 # CloudMounter 4.5
-mas install 1516894961 # Codye 2.0.3
-mas install 1531594277 # Color Widgets 4.5.1
-mas install 6476814377 # com.xavyx.Easy-Face-Blur 1.4.2
-mas install 595191960 # CopyClip 1.9.8
-mas install 1487937127 # Craft 2.7.8
-mas install 6476924627 # Create Custom Symbols 1.6
-mas install 980888073 # Crypto Pro 8.0.0
-mas install 640199958 # Developer 10.5.1
-mas install 1588151344 # Essentials 1.5.2
-mas install 923463607 # Faviconer 1.1.2
-mas install 1462114288 # Grammarly for Safari 9.73
-mas install 1460330618 # Hype 4 4.1.16
-mas install 1487860882 # iMazing Profile Editor 1.9.0
-mas install 408981434 # iMovie 10.4
-mas install 409183694 # Keynote 14.0
-mas install 1602158108 # Logo Maker 2.4
-mas install 6445850897 # Logo Maker & Creator 3.7
-mas install 1369145272 # Logo Maker - Design Monogram 10.2.3
-mas install 1458866808 # MacFamilyTree 9 9.3.3
-mas install 441258766 # Magnet 2.14.0
-mas install 1480068668 # Messenger 208.0
-mas install 462058435 # Microsoft Excel 16.83
-mas install 784801555 # Microsoft OneNote 16.83
-mas install 985367838 # Microsoft Outlook 16.83.3
-mas install 462062816 # Microsoft PowerPoint 16.83
-mas install 462054704 # Microsoft Word 16.83
-mas install 1464222390 # Model Pro 1.2
-mas install 1551462255 # MouseBoost 3.3.8
-mas install 1592917505 # Noir 2024.1.9
-mas install 409203825 # Numbers 14.0
-mas install 1471867429 # OTP Auth 2.18.0
-mas install 409201541 # Pages 14.0
-mas install 600925318 # Parallels Client 19.3.24686
-mas install 1085114709 # Parallels Desktop 1.9.2
-mas install 1472777122 # PayPal Honey 16.5.1
-mas install 715483615 # Picture Collage Maker 3 Lite 3.7.10
-mas install 1289583905 # Pixelmator Pro 3.5.8
-mas install 1571283503 # Redirect Web for Safari 5.1.1
-mas install 403195710 # Remote Mouse 3.302
-mas install 1503136033 # Service Station 2020.9
-mas install 1095562398 # Shopping for Amazon 3.3.1
-mas install 442168834 # SiteSucker 5.3.2
-mas install 863015334 # Sparkle 5.5.1
-mas install 1633701470 # Sticklets 1.1.1
-mas install 1150887374 # Sticky Notes 2.1.2
-mas install 1082989794 # Templates for Pixelmator 3.0.0
-mas install 899247664 # TestFlight 3.5.1
-mas install 425424353 # The Unarchiver 4.3.6
-mas install 1241342461 # Transcribe 4.18.13
-mas install 1450874784 # Transporter 1.2.5
-mas install 1482454543 # Twitter 9.30
-mas install 1211437633 # Universe 2023.47
-mas install 497799835 # Xcode 15.3
+
+# Mac App Store Installations
+mas 442397431 # Address Book Clearout 2.1.10
+mas 1451544217 # Adobe Lightroom 7.2
+mas 6447312365 # AI Chat Bot 14.1.2
+mas 1037126344 # Apple Configurator 2.17
+mas 1028905953 # Betternet VPN 3.6.0
+mas 1518425043 # Boop 1.4.0
+mas 6449970704 # Brand Identity - Stylescape 1.0
+mas 897446215 # Canva 1.84.0
+mas 1500855883 # CapCut 3.7.0
+mas 1456386228 # Clockology 1.4.8
+mas 1130254674 # CloudMounter 4.5
+mas 1516894961 # Codye 2.0.3
+mas 1531594277 # Color Widgets 4.5.1
+mas 6476814377 # com.xavyx.Easy-Face-Blur 1.4.2
+mas 595191960 # CopyClip 1.9.8
+mas 1487937127 # Craft 2.7.8
+mas 6476924627 # Create Custom Symbols 1.6
+mas 980888073 # Crypto Pro 8.0.0
+mas 640199958 # Developer 10.5.1
+mas 1588151344 # Essentials 1.5.2
+mas 923463607 # Faviconer 1.1.2
+mas 1462114288 # Grammarly for Safari 9.73
+mas 1460330618 # Hype 4 4.1.16
+mas 1487860882 # iMazing Profile Editor 1.9.0
+mas 408981434 # iMovie 10.4
+mas 409183694 # Keynote 14.0
+mas 1602158108 # Logo Maker 2.4
+mas 6445850897 # Logo Maker & Creator 3.7
+mas 1369145272 # Logo Maker - Design Monogram 10.2.3
+mas 1458866808 # MacFamilyTree 9 9.3.3
+mas 441258766 # Magnet 2.14.0
+mas 1480068668 # Messenger 208.0
+mas 462058435 # Microsoft Excel 16.83
+mas 784801555 # Microsoft OneNote 16.83
+mas 985367838 # Microsoft Outlook 16.83.3
+mas 462062816 # Microsoft PowerPoint 16.83
+mas 462054704 # Microsoft Word 16.83
+mas 1464222390 # Model Pro 1.2
+mas 1551462255 # MouseBoost 3.3.8
+mas 1592917505 # Noir 2024.1.9
+mas 409203825 # Numbers 14.0
+mas 1471867429 # OTP Auth 2.18.0
+mas 409201541 # Pages 14.0
+mas 600925318 # Parallels Client 19.3.24686
+mas 1085114709 # Parallels Desktop 1.9.2
+mas 1472777122 # PayPal Honey 16.5.1
+mas 715483615 # Picture Collage Maker 3 Lite 3.7.10
+mas 1289583905 # Pixelmator Pro 3.5.8
+mas 1571283503 # Redirect Web for Safari 5.1.1
+mas 403195710 # Remote Mouse 3.302
+mas 1503136033 # Service Station 2020.9
+mas 1095562398 # Shopping for Amazon 3.3.1
+mas 442168834 # SiteSucker 5.3.2
+mas 863015334 # Sparkle 5.5.1
+mas 1633701470 # Sticklets 1.1.1
+mas 1150887374 # Sticky Notes 2.1.2
+mas 1082989794 # Templates for Pixelmator 3.0.0
+mas 899247664 # TestFlight 3.5.1
+mas 425424353 # The Unarchiver 4.3.6
+mas 1241342461 # Transcribe 4.18.13
+mas 1450874784 # Transporter 1.2.5
+mas 1482454543 # Twitter 9.30
+mas 1211437633 # Universe 2023.47
+mas 497799835 # Xcode 15.3
+
+# VSCode Extensions Installation
 vscode "ahkohd.glance"
 vscode "akvelonprimary.autocomment"
 vscode "alefragnani.bookmarks"
@@ -369,3 +395,10 @@ vscode "yutengjing.vscode-archive"
 vscode "zgm.vscode-fish"
 vscode "zignd.html-css-class-completion"
 vscode "ziterz.codesandbox-black-theme"
+
+
+# Handle specific configurations for Apple Silicon
+on_apple_silicon do
+  # Architecture-specific settings
+  set_arch "arm64"
+end
