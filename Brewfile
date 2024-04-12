@@ -1,32 +1,35 @@
+
 require 'date'
 
-# Fetch versions and environment details
-brew_version = `brew -v`.strip
-bash_version = `bash -c 'echo $BASH_VERSION'`.strip
-user_shell = `echo $SHELL`.strip
+# brew version
+hb = `brew -v`
+# bash version
+bv = `bash -c 'echo $BASH_VERSION'`
+sh = `echo $SHELL`
+# current date
+now = DateTime.now
+now.strftime("%B %d %Y")
+# auto-update status
+au = ENV.fetch("HOMEBREW_AUTO_UPDATE_COMMAND")
+status = au ? "True" : "False"
 
-# Current date
-current_date = DateTime.now.strftime("%B %d %Y")
+# fail if Homebrew is not installed, (or if it's not in $PATH)
+if !hb.include? "Homebrew"
+  abort("ERROR: Homebrew does not appear to be installed!")
+end
 
-# Auto-update status
-auto_update_command = ENV.fetch("HOMEBREW_AUTO_UPDATE_COMMAND", nil)
-auto_update_status = auto_update_command ? "Enabled" : "Disabled"
-
-# Abort if Homebrew is not installed or not found in $PATH
-abort("ERROR: Homebrew does not appear to be installed!") unless brew_version.include?("Homebrew")
-
-# Display system and Homebrew information
-puts "--------------------------------"
-puts "Homebrew version: #{brew_version}"
-puts "Homebrew system information:"
-system "brew config"
-puts "Auto-update status: #{auto_update_status} (Command: #{auto_update_command})"
-puts "Bash version: #{bash_version}"
-puts "Current user shell: #{user_shell}"
-puts "--------------------------------\n"
-
-# Pause for potential cancellation
-sleep(5)
+# display some basic system env information
+puts("--------------------------------")
+puts("HOMEBREW_PRODUCT    : " + ENV.fetch("HOMEBREW_PRODUCT"))
+puts("HOMEBREW_SYSTEM     : " + ENV.fetch("HOMEBREW_SYSTEM"))
+puts("HOMEBREW_OS_VERSION : " + ENV.fetch("HOMEBREW_OS_VERSION"))
+puts("HOMEBREW_VERSION    : " + ENV.fetch("HOMEBREW_VERSION"))
+puts("HOMEBREW_PROCESSOR  : " + ENV.fetch("HOMEBREW_PROCESSOR"))
+puts("AUTO_UPDATE_ENABLED : " + status + " (" + au + ")")
+puts("BASH_VERSION        : " + bv)
+puts("CURRENT_USER_SHELL  : " + sh)
+puts("--------------------------------")
+puts("\n")
 
 # Homebrew Update and Taps
 tap "homebrew/core"
@@ -36,7 +39,6 @@ tap "homebrew/bundle"
 tap "powershell/tap" 
 tap "homebrew/cask-fonts" 
 tap "powershell/tap", 
-tap "felixkratz/formulae"
 tap "homebrew/autoupdate"   
 tap "homebrew/bundle"         # [https://github.com/Homebrew/homebrew-bundle]
 tap "homebrew/cask-fonts"     # [https://github.com/Homebrew/homebrew-cask-fonts]
