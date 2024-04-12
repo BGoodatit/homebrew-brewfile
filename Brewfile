@@ -1,31 +1,15 @@
+# Determine the Homebrew installation prefix dynamically
+brew_prefix = `brew --prefix`.chomp
 
-# Basic System Info and Homebrew Status
-hb = `#{brew_prefix}/bin/brew -v`
-bv = `bash -c 'echo $BASH_VERSION'`
-sh = `echo $SHELL`
-now = DateTime.now.strftime("%B %d %Y")
-au = ENV.fetch("HOMEBREW_AUTO_UPDATE_COMMAND", "false")
-status = au != "false" ? "True" : "False"
-abort("ERROR: Homebrew does not appear to be installed!") unless hb.include? "Homebrew"
-puts("--------------------------------")
-puts("HOMEBREW_PRODUCT    : " + ENV.fetch("HOMEBREW_PRODUCT", "Unknown"))
-puts("HOMEBREW_SYSTEM     : " + ENV.fetch("HOMEBREW_SYSTEM", "Unknown"))
-puts("HOMEBREW_OS_VERSION : " + ENV.fetch("HOMEBREW_OS_VERSION", "Unknown"))
-puts("HOMEBREW_VERSION    : " + ENV.fetch("HOMEBREW_VERSION", "Unknown"))
-puts("HOMEBREW_PROCESSOR  : " + ENV.fetch("HOMEBREW_PROCESSOR", "Unknown"))
-puts("AUTO_UPDATE_ENABLED : " + status + " (" + au + ")")
-puts("BASH_VERSION        : " + bv)
-puts("CURRENT_USER_SHELL  : " + sh)
-puts("--------------------------------")
-puts("\n")
-sleep(5)
-
-tap "homebrew/core"
-tap "homebrew/cask"
-tap "homebrew/services"
-tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
+# Update Homebrew and set up taps
+tap "#{brew_prefix}/homebrew/core" unless ENV.fetch("HOMEBREW_VERSION", "0") >= '4.0.0'
+tap "#{brew_prefix}/homebrew/cask" unless ENV.fetch("HOMEBREW_VERSION", "0") >= '4.0.0'
+tap "#{brew_prefix}/homebrew/services"
+tap "#{brew_prefix}/homebrew/bundle"
+tap "#{brew_prefix}/homebrew/cask-fonts"
+tap "#{brew_prefix}/homebrew/autoupdate"
 tap "powershell/tap"
+tap "felixkratz/formulae"
 
 # Set global arguments for all 'brew install --cask' commands
 cask_args appdir: "~/Applications", require_sha: true
@@ -144,6 +128,13 @@ brew "zsh-syntax-highlighting"
 brew "felixkratz/formulae/sketchybar"
 brew "powershell/tap/powershell"
 
+# Check for ARM-specific packages
+if Hardware::CPU.arm?
+  puts "Installing ARM-specific packages."
+  # ARM-specific or universal casks
+  cask "visual-studio-code"
+end
+
 # Cask Applications Installation
 cask "google-chrome"
 cask "visual-studio-code"
@@ -189,7 +180,6 @@ cask "tor-browser"
 cask "warp"
 cask "whatsapp"
 cask "wireshark"
-
 # Mac App Store Installations
 mas 442397431 # Address Book Clearout 2.1.10
 mas 1451544217 # Adobe Lightroom 7.2
@@ -255,149 +245,28 @@ mas 1450874784 # Transporter 1.2.5
 mas 1482454543 # Twitter 9.30
 mas 1211437633 # Universe 2023.47
 mas 497799835 # Xcode 15.3
+# Basic System Info and Homebrew Status
+hb = `#{brew_prefix}/bin/brew -v`
+bv = `bash -c 'echo $BASH_VERSION'`
+sh = `echo $SHELL`
+now = DateTime.now.strftime("%B %d %Y")
+au = ENV.fetch("HOMEBREW_AUTO_UPDATE_COMMAND", "false")
+status = au != "false" ? "True" : "False"
+abort("ERROR: Homebrew does not appear to be installed!") unless hb.include? "Homebrew"
+puts("--------------------------------")
+puts("HOMEBREW_PRODUCT    : " + ENV.fetch("HOMEBREW_PRODUCT", "Unknown"))
+puts("HOMEBREW_SYSTEM     : " + ENV.fetch("HOMEBREW_SYSTEM", "Unknown"))
+puts("HOMEBREW_OS_VERSION : " + ENV.fetch("HOMEBREW_OS_VERSION", "Unknown"))
+puts("HOMEBREW_VERSION    : " + ENV.fetch("HOMEBREW_VERSION", "Unknown"))
+puts("HOMEBREW_PROCESSOR  : " + ENV.fetch("HOMEBREW_PROCESSOR", "Unknown"))
+puts("AUTO_UPDATE_ENABLED : " + status + " (" + au + ")")
+puts("BASH_VERSION        : " + bv)
+puts("CURRENT_USER_SHELL  : " + sh)
+puts("--------------------------------")
+puts("\n")
+sleep(5)
 
-# VSCode Extensions Installation
-vscode "ahkohd.glance"
-vscode "akvelonprimary.autocomment"
-vscode "alefragnani.bookmarks"
-vscode "alefragnani.project-manager"
-vscode "alexmunteanu.toggle-block-comments"
-vscode "andrsdc.base16-themes"
-vscode "antfu.browse-lite"
-vscode "antfu.vite"
-vscode "atishay-jain.all-autocomplete"
-vscode "bmalehorn.shell-syntax"
-vscode "bmalehorn.vscode-fish"
-vscode "bobmagicii.autofoldyeah"
-vscode "casperstorm.directory-files"
-vscode "chekweitan.compare-view"
-vscode "chiro2001.digital-ocean-manager"
-vscode "christian-kohler.npm-intellisense"
-vscode "codesandbox-io.codesandbox-projects"
-vscode "codestream.codestream"
-vscode "codezombiech.gitignore"
-vscode "coenraads.disableligatures"
-vscode "ctf0.macros"
-vscode "dae.vscode-mac-color-picker"
-vscode "danidandev.comment-remover"
-vscode "dart-code.dart-code"
-vscode "dawranliou.minimal-theme-vscode"
-vscode "dbaeumer.vscode-eslint"
-vscode "devsense.composer-php-vscode"
-vscode "devsense.intelli-php-vscode"
-vscode "devsense.phptools-vscode"
-vscode "devsense.profiler-php-vscode"
-vscode "dhedgecock.radical-vscode"
-vscode "dotiful.dotfiles-syntax-highlighting"
-vscode "dsoloha.native-macos"
-vscode "eamodio.gitlens"
-vscode "ecmel.vscode-html-css"
-vscode "eg2.vscode-npm-script"
-vscode "esbenp.prettier-vscode"
-vscode "evolution-gaming.evolution-gaming--vscode-eslint"
-vscode "firefox-devtools.vscode-firefox-debug"
-vscode "formulahendry.code-runner"
-vscode "foxundermoon.shell-format"
-vscode "github.codespaces"
-vscode "github.remotehub"
-vscode "github.vscode-pull-request-github"
-vscode "golang.go"
-vscode "gruntfuggly.todo-tree"
-vscode "hoovercj.vscode-settings-cycler"
-vscode "htmlhint.vscode-htmlhint"
-vscode "ibm.output-colorizer"
-vscode "inu1255.easy-snippet"
-vscode "irongeek.vscode-env"
-vscode "jabacchetta.vscode-essentials"
-vscode "jacobkucera.codepen-theme"
-vscode "jakearl.search-editor-apply-changes"
-vscode "jasonlhy.hungry-delete"
-vscode "jkjustjoshing.vscode-text-pastry"
-vscode "jock.svg"
-vscode "johnpapa.vscode-peacock"
-vscode "jpruliere.env-autocomplete"
-vscode "lacroixdavid1.vscode-format-context-menu"
-vscode "lakshits11.best-themes-redefined"
-vscode "lostintangent.vsls-whiteboard"
-vscode "merko.merko-green-theme"
-vscode "metaseed.metago"
-vscode "metaseed.metajump"
-vscode "metaseed.metaword"
-vscode "mhutchie.git-graph"
-vscode "micnil.vscode-checkpoints"
-vscode "miguelsolorio.fluent-icons"
-vscode "mikestead.dotenv"
-vscode "moshfeu.diff-merge"
-vscode "ms-python.debugpy"
-vscode "ms-python.python"
-vscode "ms-python.vscode-pylance"
-vscode "ms-vscode-remote.remote-containers"
-vscode "ms-vscode-remote.remote-ssh"
-vscode "ms-vscode-remote.remote-ssh-edit"
-vscode "ms-vscode.azure-repos"
-vscode "ms-vscode.cmake-tools"
-vscode "ms-vscode.live-server"
-vscode "ms-vscode.makefile-tools"
-vscode "ms-vscode.powershell"
-vscode "ms-vscode.remote-explorer"
-vscode "ms-vscode.remote-repositories"
-vscode "ms-vscode.remote-server"
-vscode "ms-vsliveshare.vsliveshare"
-vscode "mubaidr.vuejs-extension-pack"
-vscode "nerudevs.jellyfish-dark"
-vscode "ngryman.codesandbox-theme"
-vscode "nhoizey.gremlins"
-vscode "peterschmalfeldt.explorer-exclude"
-vscode "pkief.material-icon-theme"
-vscode "pnp.polacode"
-vscode "pranaygp.vscode-css-peek"
-vscode "rassek96.vscode-comment-selection"
-vscode "redhat.java"
-vscode "remimarche.cspell-tech"
-vscode "rioj7.vscode-json-validate"
-vscode "ritwickdey.liveserver"
-vscode "rvest.vs-code-prettier-eslint"
-vscode "sankeyteam.dcd"
-vscode "sdras.vue-vscode-snippets"
-vscode "shayanalijalbani.next-jelly-fish"
-vscode "simonsiefke.svg-preview"
-vscode "skyapps.fish-vscode"
-vscode "slevesque.vscode-multiclip"
-vscode "smatdnepr.svg-sprite-viewer-generator"
-vscode "stkb.rewrap"
-vscode "streetsidesoftware.code-spell-checker"
-vscode "svipas.code-autocomplete"
-vscode "svipas.control-snippets"
-vscode "tamasfe.even-better-toml"
-vscode "timonwong.shellcheck"
-vscode "tlevesque2.duplicate-finder"
-vscode "tombonnike.vscode-status-bar-format-toggle"
-vscode "tomoki1207.pdf"
-vscode "trabpukcip.vscode-npm-scripts"
-vscode "twxs.cmake"
-vscode "usernamehw.errorlens"
-vscode "victoriadrake.kabukicho"
-vscode "visualstudioexptteam.intellicode-api-usage-examples"
-vscode "visualstudioexptteam.vscodeintellicode"
-vscode "vitest.explorer"
-vscode "vscjava.vscode-java-debug"
-vscode "vscjava.vscode-java-dependency"
-vscode "vscjava.vscode-java-pack"
-vscode "vscjava.vscode-java-test"
-vscode "vscjava.vscode-maven"
-vscode "vsls-contrib.gistfs"
-vscode "vue.volar"
-vscode "wayou.vscode-todo-highlight"
-vscode "xabikos.javascriptsnippets"
-vscode "xyz.local-history"
-vscode "yakenoharashinnosuke.insistent-comments"
-vscode "yutengjing.vscode-archive"
-vscode "zgm.vscode-fish"
-vscode "zignd.html-css-class-completion"
-vscode "ziterz.codesandbox-black-theme"
-
-
-# Handle specific configurations for Apple Silicon
+# Specific configurations for Apple Silicon
 on_apple_silicon do
   # Architecture-specific settings
   set_arch "arm64"
