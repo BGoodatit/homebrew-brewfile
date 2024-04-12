@@ -402,10 +402,3 @@ puts("BASH_VERSION        : " + bv)
 puts("CURRENT_USER_SHELL  : " + sh)
 puts("--------------------------------")
 puts("\n")
-sleep(5)
-
-# Specific configurations for Apple Silicon
-on_apple_silicon do
-  # Architecture-specific settings
-  set_arch "arm64"
-end
