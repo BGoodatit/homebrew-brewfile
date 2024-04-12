@@ -1,5 +1,3 @@
-
-# Homebrew Update and Taps
 tap "homebrew/core"
 tap "homebrew/cask"
 tap "homebrew/services" 
@@ -8,14 +6,9 @@ tap "powershell/tap"
 tap "homebrew/cask-fonts" 
 tap "powershell/tap"
 tap "homebrew/autoupdate"   
-tap "homebrew/bundle"         # [https://github.com/Homebrew/homebrew-bundle]
-tap "homebrew/cask-fonts"     # [https://github.com/Homebrew/homebrew-cask-fonts]
-tap "homebrew/services"       # [https://github.com/Homebrew/homebrew-services]
-
-# Set global arguments for all 'brew install --cask' commands
-cask_args appdir: "~/Applications", require_sha: true
-
-# Unix Tools Installation
+tap "homebrew/bundle"        
+tap "homebrew/cask-fonts"    
+tap "homebrew/services"      
 brew "git"
 brew "wget"
 brew "curl"
@@ -128,8 +121,7 @@ brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 brew "felixkratz/formulae/sketchybar"
 brew "powershell/tap/powershell"
-
-# Cask Applications Installation
+cask_args appdir: "~/Applications" #require_sha:true
 cask "google-chrome"
 cask "firefox-developer-edition"
 cask "visual-studio-code"
@@ -175,8 +167,6 @@ cask "tor-browser"
 cask "warp"
 cask "whatsapp"
 cask "wireshark"
-
-# Mac App Store Installations
 mas install 442397431 # Address Book Clearout 2.1.10
 mas install 1451544217 # Adobe Lightroom 7.2
 mas install 6447312365 # AI Chat Bot 14.1.2
@@ -241,8 +231,6 @@ mas install 1450874784 # Transporter 1.2.5
 mas install 1482454543 # Twitter 9.30
 mas install 1211437633 # Universe 2023.47
 mas install 497799835 # Xcode 15.3
-
-# VSCode Extensions Installation
 vscode "ahkohd.glance"
 vscode "akvelonprimary.autocomment"
 vscode "alefragnani.bookmarks"
@@ -381,10 +369,3 @@ vscode "yutengjing.vscode-archive"
 vscode "zgm.vscode-fish"
 vscode "zignd.html-css-class-completion"
 vscode "ziterz.codesandbox-black-theme"
-
-
-# Handle specific configurations for Apple Silicon
-on_apple_silicon do
-  # Architecture-specific settings
-  set_arch "arm64"
-end
