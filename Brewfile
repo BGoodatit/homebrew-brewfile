@@ -38,7 +38,7 @@ tap "homebrew/services"
 tap "homebrew/bundle" 
 tap "powershell/tap" 
 tap "homebrew/cask-fonts" 
-tap "powershell/tap", 
+tap "powershell/tap"
 tap "homebrew/autoupdate"   
 tap "homebrew/bundle"         # [https://github.com/Homebrew/homebrew-bundle]
 tap "homebrew/cask-fonts"     # [https://github.com/Homebrew/homebrew-cask-fonts]
