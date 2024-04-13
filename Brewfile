@@ -2,16 +2,14 @@
 brew_prefix = `brew --prefix`.chomp
 
 # Update Homebrew and set up taps
-tap "#{brew_prefix}/homebrew/core" unless ENV.fetch("HOMEBREW_VERSION", "0") >= '4.0.0'
-tap "#{brew_prefix}/homebrew/cask" unless ENV.fetch("HOMEBREW_VERSION", "0") >= '4.0.0'
-tap "#{brew_prefix}/homebrew/services"
-tap "#{brew_prefix}/homebrew/bundle"
-tap "#{brew_prefix}/homebrew/cask-fonts"
-tap "#{brew_prefix}/homebrew/autoupdate"
+tap "homebrew/services"
+tap "homebrew/bundle"
+tap "homebrew/cask-fonts"
+tap "homebrew/autoupdate"
 tap "powershell/tap"
 tap "felixkratz/formulae"
 
-# set arguments for all 'brew install --cask' commands
+# Set global arguments for all 'brew install --cask' commands
 cask_args appdir: "~/Applications"
 
 # 'brew install'
