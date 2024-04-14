@@ -10,7 +10,7 @@ tap "powershell/tap"
 tap "felixkratz/formulae"
 
 # Set global arguments for all 'brew install --cask' commands
-cask_args appdir: "~/Applications"
+cask_args appdir: "~/Applications", no_quarantine: true
 
 # 'brew install'
 brew "git"
