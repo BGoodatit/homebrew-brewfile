@@ -8,7 +8,8 @@ tap "homebrew/cask-fonts"
 tap "homebrew/autoupdate"
 tap "powershell/tap"
 tap "felixkratz/formulae"
-
+tap "homebrew/cask"
+tap "buo/cask-upgrade"
 # Set global arguments for all 'brew install --cask' commands
 cask_args appdir: "~/Applications", no_quarantine: true
 
@@ -19,6 +20,7 @@ brew "curl"
 brew "tree"
 brew "htop"
 brew "mas"
+brew "cu"
 brew "xz"
 brew "openssl@3"
 brew "coreutils"
