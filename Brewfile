@@ -11,7 +11,7 @@ tap "felixkratz/formulae"
 tap "homebrew/cask"
 tap "buo/cask-upgrade"
 # Set global arguments for all 'brew install --cask' commands
-cask_args appdir: "~/Applications", no_quarantine: true
+cask_args appdir: "/Applications", no_quarantine: true
 
 # 'brew install'
 brew "git"
@@ -35,6 +35,7 @@ brew "bdw-gc"
 brew "black"
 brew "icu4c"
 brew "boost"
+brew "zsh-completions"
 brew "c-ares"
 brew "fontconfig"
 brew "gettext"
