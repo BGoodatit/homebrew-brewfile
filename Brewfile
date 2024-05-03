@@ -9,22 +9,21 @@ tap "homebrew/autoupdate"
 tap "powershell/tap"
 tap "felixkratz/formulae"
 tap "buo/cask-upgrade"
+tap "homebrew/cask-versions"
+brew search '/font-.*-nerd-font/' | awk '{ print $1 }' | xargs -I{} brew install --cask {} || true
 # Set global arguments for all 'brew install --cask' commands
 cask_args appdir: "/Applications", no_quarantine: true
 
 # 'brew install'
-brew "git"
-brew "wget"
-brew "curl"
-brew "tree"
-brew "htop"
-brew "mas"
 brew "xz"
 brew "openssl@3"
+brew "ascii"
 brew "coreutils"
 brew "asdf"
+brew "gettext"
 brew "sqlite"
 brew "python@3.12"
+brew "libxext"
 brew "autojump"
 brew "bash"
 brew "bash-completion@2"
@@ -33,19 +32,20 @@ brew "bdw-gc"
 brew "black"
 brew "icu4c"
 brew "boost"
-brew "zsh-completions"
 brew "c-ares"
 brew "fontconfig"
-brew "gettext"
-brew "libxext"
 brew "catimg"
 brew "cava"
 brew "ccache"
 brew "chruby"
+brew "fish"
+brew "chruby-fish"
 brew "clang-format"
 brew "cmake"
 brew "colordiff"
 brew "cookiecutter"
+brew "create-dmg"
+brew "curl"
 brew "dart-sdk"
 brew "dotenv-linter"
 brew "doxygen"
@@ -55,20 +55,24 @@ brew "libsodium"
 brew "numpy"
 brew "tbb"
 brew "theora"
-brew "fish"
 brew "fisher"
 brew "flavours"
 brew "fontforge"
 brew "gh"
+brew "git"
 brew "git-gui"
 brew "git-interactive-rebase-tool"
+brew "gnome-themes-extra"
 brew "gnu-sed"
 brew "gnu-time"
+brew "go"
 brew "grc"
 brew "node"
 brew "gulp-cli"
+brew "htop"
 brew "httrack"
 brew "hugo"
+brew "hyfetch"
 brew "imagemagick"
 brew "ipython"
 brew "jp2a"
@@ -76,12 +80,15 @@ brew "jq"
 brew "pandoc"
 brew "jupyterlab"
 brew "libgpg-error"
+brew "llvm@17"
 brew "lua"
 brew "lmod"
 brew "lolcat"
 brew "lsd"
+brew "mackup"
 brew "ruby"
 brew "macvim"
+brew "mas"
 brew "mercurial"
 brew "mypy"
 brew "zlib"
@@ -90,13 +97,14 @@ brew "ninja"
 brew "nox"
 brew "nvm"
 brew "openjdk"
+brew "p7zip"
 brew "pdftk-java"
 brew "pipx"
 brew "poetry"
 brew "pre-commit"
 brew "pyenv"
-brew "python-urllib3"
 brew "python@3.11"
+brew "qemu"
 brew "qt"
 brew "ruby-build"
 brew "rbenv"
@@ -104,6 +112,7 @@ brew "rename"
 brew "root"
 brew "ruff"
 brew "rust"
+brew "sha3sum"
 brew "shellcheck"
 brew "shfmt"
 brew "starship"
@@ -114,126 +123,98 @@ brew "thefuck"
 brew "tmux"
 brew "tor"
 brew "tox"
+brew "tree"
 brew "vcs"
 brew "virtualenv"
 brew "virtualenvwrapper"
 brew "w3m"
+brew "wget"
 brew "yarn"
 brew "zplug"
 brew "zsh-autosuggestions"
+brew "zsh-completions"
 brew "zsh-syntax-highlighting"
 brew "felixkratz/formulae/sketchybar"
 brew "powershell/tap/powershell"
 
 # 'brew install --cask'
-cask "google-chrome"
-cask "visual-studio-code"
-cask "slack"
-cask "spotify"
-cask "docker"
-cask "iterm2"
-cask "adobe-creative-cloud"
-cask "alacritty"
-cask "amethyst"
 cask "balenaetcher"
-cask "brave-browser"
-cask "cakebrew"
-cask "diffmerge"
+cask "bluestacks"
 cask "disk-drill"
-cask "dropbox"
+cask "docker"
 cask "etrecheckpro"
-cask "font-hack-nerd-font"
-cask "fontforge"
-cask "gimp"
-cask "gulp"
+cask "firefox@developer-edition"
+cask "font-fira-mono"
+cask "font-fira-mono-for-powerline"
+cask "font-fira-sans"
+cask "font-fira-sans-condensed"
+cask "font-fira-sans-extra-condensed"
+cask "font-firago"
+cask "font-jetbrains-mono"
+cask "font-lekton-nerd-font", args: { appdir: "/Applications" }
+cask "font-mononoki"
+cask "font-recursive-mono-nerd-font"
+cask "font-ubuntu-sans-nerd-font"
+cask "font-zed-mono-nerd-font"
+cask "fork"
+cask "google-chrome", args: { appdir: "/Applications" }
+cask "gstreamer-development"
+cask "gstreamer-runtime"
 cask "imazing"
 cask "imazing-converter"
 cask "imazing-profile-editor"
 cask "ipvanish-vpn"
+cask "iterm2", args: { appdir: "/Applications" }
 cask "macdown"
 cask "mactex"
 cask "mattermost"
 cask "megasync"
 cask "miniconda"
+cask "mongodb-compass@beta"
+cask "mono-mdk-for-visual-studio"
 cask "motrix"
-cask "powershell"
-cask "sf-symbols"
+cask "parallels"
+cask "porting-kit"
+cask "sf-symbols", args: { appdir: "/Applications" }
 cask "spline"
-cask "texstudio"
 cask "tor-browser"
+cask "visual-studio"
+cask "visual-studio-code", args: { appdir: "/Applications" }
 cask "warp"
-cask "whatsapp"
-cask "wireshark"
+cask "wine-stable"
 
 # 'mas install'
-#mas "Microsoft Excel", id: 462058435
-#mas "Microsoft OneNote", id: 784801555
-#mas "CapCut", id: 1500855883
-#mas "Twitter", id: 1482454543
-#mas "Transporter", id: 1450874784
-#mas "SiteSucker", id: 442168834
-#mas "Grammarly for Safari", id: 1462114288
-#mas "Boop", id: 1518425043
-#mas "Canva", id: 897446215
-#mas "Brand Identity - Stylescape", id: 6449970704
-#mas "TestFlight", id: 899247664
-#mas "Shopping for Amazon", id: 1095562398
-#mas "Service Station", id: 1503136033
-#mas "Sticky Notes", id: 1150887374
-#mas "Faviconer", id: 923463607
-#mas "Apple Configurator", id: 1037126344
-#mas "Logo Maker - Design Monogram", id: 1369145272
-#mas "Microsoft PowerPoint", id: 462062816
-#mas "Parallels Desktop", id: 1085114709
-#mas "Redirect Web for Safari", id: 1571283503
-#mas "Developer", id: 640199958
-#mas "iMovie", id: 408981434
-#mas "Logo Maker & Creator", id: 6445850897
-#mas "Kiano", id: 1413833786
-#mas "Microsoft Outlook", id: 985367838
-#mas "OTP Auth", id: 1471867429
-#mas "Sticklets", id: 1633701470
-#mas "Remote Mouse", id: 403195710
-#mas "Model Pro", id: 1464222390
-#mas "Betternet VPN", id: 1028905953
-#mas "Messenger", id: 1480068668
-#mas "PayPal Honey", id: 1472777122
-#mas "AI Chat Bot", id: 6447312365
-#mas "CloudMounter", id: 1130254674
-#mas "Address Book Clearout", id: 442397431
-#mas "EnhanceFox", id: 1544212575
-#mas "Craft", id: 1487937127
-#mas "iMazing Profile Editor", id: 1487860882
-#mas "Xcode", id: 497799835
-#mas "Codye", id: 1516894961
-#mas "Parallels Client", id: 600925318
-#mas "Templates for Pixelmator", id: 1082989794
-#mas "Logo Maker", id: 1602158108
-#mas "Hype 4", id: 1460330618
-#mas "Create Custom Symbols", id: 6476924627
-#mas "Pages", id: 409201541
-#mas "MouseBoost", id: 1551462255
-#mas "Hand Mirror", id: 1502839586
-#mas "Numbers", id: 409203825
-#mas "com.xavyx.Easy-Face-Blur", id: 6476814377
-#mas "Noir", id: 1592917505
-#mas "The Unarchiver", id: 425424353
-#mas "Microsoft Word", id: 462054704
-#mas "Pixelmator Pro", id: 1289583905
-#mas "Essentials", id: 1588151344
-#mas "Transcribe", id: 1241342461
-#mas "FinderX", id: 6466177414
-#mas "CopyClip", id: 595191960
-#mas "Magnet", id: 441258766
-#mas "Keynote", id: 409183694
-#mas "Crypto Pro", id: 980888073
-#mas "MacFamilyTree 9", id: 1458866808
-#mas "Clockology", id: 1456386228
-#mas "Sparkle", id: 863015334
-#mas "Universe", id: 1211437633
-#mas "Picture Collage Maker 3 Lite", id: 715483615
-#mas "Color Widgets", id: 1531594277
-#mas "Adobe Lightroom", id: 1451544217
+mas "Address Book Clearout", id: 442397431
+mas "Apple Configurator", id: 1037126344
+mas "Betternet VPN", id: 1028905953
+mas "CloudMounter", id: 1130254674
+mas "CopyClip", id: 595191960
+mas "Developer", id: 640199958
+mas "EnhanceFox", id: 1544212575
+mas "Essentials", id: 1588151344
+mas "Grammarly for Safari", id: 1462114288
+mas "Hand Mirror", id: 1502839586
+mas "iMazing Profile Editor", id: 1487860882
+mas "MacFamilyTree 9", id: 1458866808
+mas "Magnet", id: 441258766
+mas "Messenger", id: 1480068668
+mas "Microsoft Remote Desktop", id: 1295203466
+mas "Model Pro", id: 1464222390
+mas "Numbers", id: 409203825
+mas "OTP Auth", id: 1471867429
+mas "Pages", id: 409201541
+mas "Parallels Desktop", id: 1085114709
+mas "PayPal Honey", id: 1472777122
+mas "Pixelmator Pro", id: 1289583905
+mas "Shopping for Amazon", id: 1095562398
+mas "Sticklets", id: 1633701470
+mas "Sticky Notes", id: 1150887374
+mas "The Unarchiver", id: 425424353
+mas "Transcribe", id: 1241342461
+mas "Transporter", id: 1450874784
+mas "Twitter", id: 1482454543
+mas "Universe", id: 1211437633
+mas "Xcode", id: 497799835
 
 # 'vscode --install-extension'
 vscode "ahkohd.glance"
@@ -241,7 +222,6 @@ vscode "akvelonprimary.autocomment"
 vscode "alefragnani.bookmarks"
 vscode "alefragnani.project-manager"
 vscode "alexmunteanu.toggle-block-comments"
-vscode "andrsdc.base16-themes"
 vscode "antfu.browse-lite"
 vscode "antfu.vite"
 vscode "atishay-jain.all-autocomplete"
@@ -260,18 +240,14 @@ vscode "ctf0.macros"
 vscode "dae.vscode-mac-color-picker"
 vscode "danidandev.comment-remover"
 vscode "dart-code.dart-code"
-vscode "dawranliou.minimal-theme-vscode"
 vscode "dbaeumer.vscode-eslint"
 vscode "devsense.composer-php-vscode"
 vscode "devsense.intelli-php-vscode"
 vscode "devsense.phptools-vscode"
 vscode "devsense.profiler-php-vscode"
-vscode "dhedgecock.radical-vscode"
 vscode "dotiful.dotfiles-syntax-highlighting"
-vscode "dsoloha.native-macos"
 vscode "eamodio.gitlens"
 vscode "ecmel.vscode-html-css"
-vscode "eg2.vscode-npm-script"
 vscode "esbenp.prettier-vscode"
 vscode "evolution-gaming.evolution-gaming--vscode-eslint"
 vscode "firefox-devtools.vscode-firefox-debug"
@@ -286,33 +262,36 @@ vscode "hoovercj.vscode-settings-cycler"
 vscode "htmlhint.vscode-htmlhint"
 vscode "ibm.output-colorizer"
 vscode "inu1255.easy-snippet"
+vscode "iocave.customize-ui"
+vscode "iocave.monkey-patch"
 vscode "irongeek.vscode-env"
 vscode "jabacchetta.vscode-essentials"
-vscode "jacobkucera.codepen-theme"
 vscode "jakearl.search-editor-apply-changes"
 vscode "jasonlhy.hungry-delete"
 vscode "jkjustjoshing.vscode-text-pastry"
 vscode "jock.svg"
 vscode "johnpapa.vscode-peacock"
-vscode "jpruliere.env-autocomplete"
+vscode "jonathanschlitt.open-in-system-terminal"
 vscode "lacroixdavid1.vscode-format-context-menu"
-vscode "lakshits11.best-themes-redefined"
 vscode "lostintangent.vsls-whiteboard"
-vscode "merko.merko-green-theme"
+vscode "maxcutlyp.dotenv-autocomplete"
 vscode "metaseed.metago"
 vscode "metaseed.metajump"
 vscode "metaseed.metaword"
 vscode "mhutchie.git-graph"
 vscode "micnil.vscode-checkpoints"
-vscode "miguelsolorio.fluent-icons"
 vscode "mikestead.dotenv"
 vscode "moshfeu.diff-merge"
+vscode "ms-azuretools.vscode-azureresourcegroups"
+vscode "ms-azuretools.vscode-azurevirtualmachines"
+vscode "ms-azuretools.vscode-docker"
 vscode "ms-python.debugpy"
 vscode "ms-python.python"
 vscode "ms-python.vscode-pylance"
 vscode "ms-vscode-remote.remote-containers"
 vscode "ms-vscode-remote.remote-ssh"
 vscode "ms-vscode-remote.remote-ssh-edit"
+vscode "ms-vscode.azure-account"
 vscode "ms-vscode.azure-repos"
 vscode "ms-vscode.cmake-tools"
 vscode "ms-vscode.live-server"
@@ -323,11 +302,9 @@ vscode "ms-vscode.remote-repositories"
 vscode "ms-vscode.remote-server"
 vscode "ms-vsliveshare.vsliveshare"
 vscode "mubaidr.vuejs-extension-pack"
-vscode "nerudevs.jellyfish-dark"
-vscode "ngryman.codesandbox-theme"
 vscode "nhoizey.gremlins"
+vscode "parallelsdesktop.parallels-desktop"
 vscode "peterschmalfeldt.explorer-exclude"
-vscode "pkief.material-icon-theme"
 vscode "pnp.polacode"
 vscode "pranaygp.vscode-css-peek"
 vscode "rassek96.vscode-comment-selection"
@@ -338,7 +315,7 @@ vscode "ritwickdey.liveserver"
 vscode "rvest.vs-code-prettier-eslint"
 vscode "sankeyteam.dcd"
 vscode "sdras.vue-vscode-snippets"
-vscode "shayanalijalbani.next-jelly-fish"
+vscode "silofy.hackthebox"
 vscode "simonsiefke.svg-preview"
 vscode "skyapps.fish-vscode"
 vscode "slevesque.vscode-multiclip"
@@ -353,9 +330,9 @@ vscode "tlevesque2.duplicate-finder"
 vscode "tombonnike.vscode-status-bar-format-toggle"
 vscode "tomoki1207.pdf"
 vscode "trabpukcip.vscode-npm-scripts"
+vscode "tusaeff.vscode-iterm2-theme-sync"
 vscode "twxs.cmake"
 vscode "usernamehw.errorlens"
-vscode "victoriadrake.kabukicho"
 vscode "visualstudioexptteam.intellicode-api-usage-examples"
 vscode "visualstudioexptteam.vscodeintellicode"
 vscode "vitest.explorer"
@@ -373,7 +350,6 @@ vscode "yakenoharashinnosuke.insistent-comments"
 vscode "yutengjing.vscode-archive"
 vscode "zgm.vscode-fish"
 vscode "zignd.html-css-class-completion"
-vscode "ziterz.codesandbox-black-theme"
 
 # Basic System Info and Homebrew Status
 hb = `#{brew_prefix}/bin/brew -v`
