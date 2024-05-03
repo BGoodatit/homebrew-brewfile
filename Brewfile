@@ -10,7 +10,7 @@ tap "powershell/tap"
 tap "felixkratz/formulae"
 tap "buo/cask-upgrade"
 tap "homebrew/cask-versions"
-brew search '/font-.*-nerd-font/' | awk '{ print $1 }' | xargs -I{} brew install --cask {} || true
+
 # Set global arguments for all 'brew install --cask' commands
 cask_args appdir: "/Applications", no_quarantine: true
 
@@ -138,50 +138,50 @@ brew "felixkratz/formulae/sketchybar"
 brew "powershell/tap/powershell"
 
 # 'brew install --cask'
-cask "balenaetcher"
-cask "bluestacks"
-cask "disk-drill"
-cask "docker"
-cask "etrecheckpro"
-cask "firefox@developer-edition"
-cask "font-fira-mono"
-cask "font-fira-mono-for-powerline"
-cask "font-fira-sans"
-cask "font-fira-sans-condensed"
-cask "font-fira-sans-extra-condensed"
-cask "font-firago"
-cask "font-jetbrains-mono"
-cask "font-lekton-nerd-font", args: { appdir: "/Applications" }
-cask "font-mononoki"
-cask "font-recursive-mono-nerd-font"
-cask "font-ubuntu-sans-nerd-font"
-cask "font-zed-mono-nerd-font"
-cask "fork"
-cask "google-chrome", args: { appdir: "/Applications" }
-cask "gstreamer-development"
-cask "gstreamer-runtime"
-cask "imazing"
-cask "imazing-converter"
-cask "imazing-profile-editor"
-cask "ipvanish-vpn"
-cask "iterm2", args: { appdir: "/Applications" }
-cask "macdown"
-cask "mactex"
-cask "mattermost"
-cask "megasync"
-cask "miniconda"
-cask "mongodb-compass@beta"
-cask "mono-mdk-for-visual-studio"
-cask "motrix"
-cask "parallels"
-cask "porting-kit"
-cask "sf-symbols", args: { appdir: "/Applications" }
-cask "spline"
-cask "tor-browser"
-cask "visual-studio"
-cask "visual-studio-code", args: { appdir: "/Applications" }
-cask "warp"
-cask "wine-stable"
+cask "balenaetcher", args: { appdir: "/Applications", no_quarantine: true }
+cask "bluestacks", args: { appdir: "/Applications", no_quarantine: true }
+cask "disk-drill", args: { appdir: "/Applications", no_quarantine: true }
+cask "docker", args: { appdir: "/Applications", no_quarantine: true }
+cask "etrecheckpro", args: { appdir: "/Applications", no_quarantine: true }
+cask "firefox@developer-edition", args: { appdir: "/Applications", no_quarantine: true }
+cask "font-fira-mono", args: { appdir: "/Applications", no_quarantine: true }
+cask "font-fira-mono-for-powerline", args: { appdir: "/Applications", no_quarantine: true }
+cask "font-fira-sans", args: { appdir: "/Applications", no_quarantine: true }
+cask "font-fira-sans-condensed", args: { appdir: "/Applications", no_quarantine: true }
+cask "font-fira-sans-extra-condensed", args: { appdir:"/Applications", no_quarantine: true }
+cask "font-firago", args: { appdir: "/Applications", no_quarantine: true }
+cask "font-jetbrains-mono", args: { appdir: "/Applications", no_quarantine: true }
+cask "font-lekton-nerd-font", args: { appdir: "/Applications", no_quarantine: true }
+cask "font-mononoki", args: { appdir: "/Applications", no_quarantine: true }
+cask "font-recursive-mono-nerd-font", args: { appdir: "/Applications", no_quarantine: true }
+cask "font-ubuntu-sans-nerd-font", args: { appdir: "/Applications", no_quarantine: true }
+cask "font-zed-mono-nerd-font", args: { appdir: "/Applications", no_quarantine: true }
+cask "fork", args: { appdir: "/Applications", no_quarantine: true }
+cask "google-chrome", args: { appdir: "/Applications", no_quarantine: true }
+cask "gstreamer-development", args: { appdir: "/Applications", no_quarantine: true }
+cask "gstreamer-runtime", args: { appdir: "/Applications", no_quarantine: true }
+cask "imazing", args: { appdir: "/Applications", no_quarantine: true }
+cask "imazing-converter", args: { appdir: "/Applications", no_quarantine: true }
+cask "imazing-profile-editor", args: { appdir: "/Applications", no_quarantine: true }
+cask "ipvanish-vpn", args: { appdir: "/Applications", no_quarantine: true }
+cask "iterm2", args: { appdir: "/Applications", no_quarantine: true }
+cask "macdown", args: { appdir: "/Applications", no_quarantine: true }
+cask "mactex", args: { appdir: "/Applications", no_quarantine: true }
+cask "mattermost", args: { appdir: "/Applications", no_quarantine: true }
+cask "megasync", args: { appdir: "/Applications", no_quarantine: true }
+cask "miniconda", args: { appdir: "/Applications", no_quarantine: true }
+cask "mongodb-compass@beta", args: { appdir: "/Applications", no_quarantine: true }
+cask "mono-mdk-for-visual-studio", args: { appdir: "/Applications", no_quarantine: true }
+cask "motrix", args: { appdir: "/Applications", no_quarantine: true }
+cask "parallels", args: { appdir: "/Applications", no_quarantine: true }
+cask "porting-kit", args: { appdir: "/Applications", no_quarantine: true }
+cask "sf-symbols", args: { appdir: "/Applications", no_quarantine: true }
+cask "spline", args: { appdir: "/Applications", no_quarantine: true }
+cask "tor-browser", args: { appdir: "/Applications", no_quarantine: true }
+cask "visual-studio", args: { appdir: "/Applications", no_quarantine: true }
+cask "visual-studio-code", args: { appdir: "/Applications", no_quarantine: true }
+cask "warp", args: { appdir: "/Applications", no_quarantine: true }
+cask "wine-stable", args: { appdir: "/Applications", no_quarantine: true }
 
 # 'mas install'
 mas "Address Book Clearout", id: 442397431
