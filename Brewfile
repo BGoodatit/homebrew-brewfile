@@ -1,3 +1,5 @@
+# file location: ${HOME}/Brewfile
+
 # Determine the Homebrew installation prefix dynamically
 brew_prefix = `brew --prefix`.chomp
 
