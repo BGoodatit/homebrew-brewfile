@@ -140,11 +140,6 @@ brew "felixkratz/formulae/sketchybar"
 brew "powershell/tap/powershell"
 
 # 'brew install --cask'
-cask "balenaetcher", args: { appdir: "/Applications", no_quarantine: true }
-cask "bluestacks", args: { appdir: "/Applications", no_quarantine: true }
-cask "disk-drill", args: { appdir: "/Applications", no_quarantine: true }
-cask "docker", args: { appdir: "/Applications", no_quarantine: true }
-cask "etrecheckpro", args: { appdir: "/Applications", no_quarantine: true }
 cask "firefox@developer-edition", args: { appdir: "/Applications", no_quarantine: true }
 cask "font-fira-mono", args: { appdir: "/Applications", no_quarantine: true }
 cask "font-fira-mono-for-powerline", args: { appdir: "/Applications", no_quarantine: true }
@@ -158,25 +153,30 @@ cask "font-mononoki", args: { appdir: "/Applications", no_quarantine: true }
 cask "font-recursive-mono-nerd-font", args: { appdir: "/Applications", no_quarantine: true }
 cask "font-ubuntu-sans-nerd-font", args: { appdir: "/Applications", no_quarantine: true }
 cask "font-zed-mono-nerd-font", args: { appdir: "/Applications", no_quarantine: true }
-cask "fork", args: { appdir: "/Applications", no_quarantine: true }
+# cask "fork", args: { appdir: "/Applications", no_quarantine: true }
+# cask "gstreamer-development", args: { appdir: "/Applications", no_quarantine: true }
+# cask "gstreamer-runtime", args: { appdir: "/Applications", no_quarantine: true }
+# cask "macdown", args: { appdir: "/Applications", no_quarantine: true }
+# cask "mactex", args: { appdir: "/Applications", no_quarantine: true }
+# cask "mattermost", args: { appdir: "/Applications", no_quarantine: true }
+# cask "miniconda", args: { appdir: "/Applications", no_quarantine: true }
+# cask "mongodb-compass@beta", args: { appdir: "/Applications", no_quarantine: true }
+# cask "motrix", args: { appdir: "/Applications", no_quarantine: true }
+# cask "porting-kit", args: { appdir: "/Applications", no_quarantine: true }
+# cask "balenaetcher", args: { appdir: "/Applications", no_quarantine: true }
+# cask "bluestacks", args: { appdir: "/Applications", no_quarantine: true }
+# cask "disk-drill", args: { appdir: "/Applications", no_quarantine: true }
+# cask "etrecheckpro", args: { appdir: "/Applications", no_quarantine: true }
+#cask "docker", args: { appdir: "/Applications", no_quarantine: true }
 cask "google-chrome", args: { appdir: "/Applications", no_quarantine: true }
-cask "gstreamer-development", args: { appdir: "/Applications", no_quarantine: true }
-cask "gstreamer-runtime", args: { appdir: "/Applications", no_quarantine: true }
+cask "iterm2@beta", args: { appdir: "/Applications", no_quarantine: true }
 cask "imazing", args: { appdir: "/Applications", no_quarantine: true }
 cask "imazing-converter", args: { appdir: "/Applications", no_quarantine: true }
 cask "imazing-profile-editor", args: { appdir: "/Applications", no_quarantine: true }
 cask "ipvanish-vpn", args: { appdir: "/Applications", no_quarantine: true }
-cask "iterm2", args: { appdir: "/Applications", no_quarantine: true }
-cask "macdown", args: { appdir: "/Applications", no_quarantine: true }
-cask "mactex", args: { appdir: "/Applications", no_quarantine: true }
-cask "mattermost", args: { appdir: "/Applications", no_quarantine: true }
 cask "megasync", args: { appdir: "/Applications", no_quarantine: true }
-cask "miniconda", args: { appdir: "/Applications", no_quarantine: true }
-cask "mongodb-compass@beta", args: { appdir: "/Applications", no_quarantine: true }
 cask "mono-mdk-for-visual-studio", args: { appdir: "/Applications", no_quarantine: true }
-cask "motrix", args: { appdir: "/Applications", no_quarantine: true }
 cask "parallels", args: { appdir: "/Applications", no_quarantine: true }
-cask "porting-kit", args: { appdir: "/Applications", no_quarantine: true }
 cask "sf-symbols", args: { appdir: "/Applications", no_quarantine: true }
 cask "spline", args: { appdir: "/Applications", no_quarantine: true }
 cask "tor-browser", args: { appdir: "/Applications", no_quarantine: true }
