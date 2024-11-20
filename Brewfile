@@ -140,19 +140,19 @@ brew "felixkratz/formulae/sketchybar"
 brew "powershell/tap/powershell"
 
 # 'brew install --cask'
-cask "firefox@developer-edition", args: { appdir: "/Applications", no_quarantine: true }
-cask "font-fira-mono", args: { appdir: "/Applications", no_quarantine: true }
-cask "font-fira-mono-for-powerline", args: { appdir: "/Applications", no_quarantine: true }
-cask "font-fira-sans", args: { appdir: "/Applications", no_quarantine: true }
-cask "font-fira-sans-condensed", args: { appdir: "/Applications", no_quarantine: true }
-cask "font-fira-sans-extra-condensed", args: { appdir:"/Applications", no_quarantine: true }
-cask "font-firago", args: { appdir: "/Applications", no_quarantine: true }
-cask "font-jetbrains-mono", args: { appdir: "/Applications", no_quarantine: true }
-cask "font-lekton-nerd-font", args: { appdir: "/Applications", no_quarantine: true }
-cask "font-mononoki", args: { appdir: "/Applications", no_quarantine: true }
-cask "font-recursive-mono-nerd-font", args: { appdir: "/Applications", no_quarantine: true }
-cask "font-ubuntu-sans-nerd-font", args: { appdir: "/Applications", no_quarantine: true }
-cask "font-zed-mono-nerd-font", args: { appdir: "/Applications", no_quarantine: true }
+#cask "firefox@developer-edition", args: { appdir: "/Applications", no_quarantine: true }
+#cask "font-fira-mono", args: { appdir: "/Applications", no_quarantine: true }
+#cask "font-fira-mono-for-powerline", args: { appdir: "/Applications", no_quarantine: true }
+#cask "font-fira-sans", args: { appdir: "/Applications", no_quarantine: true }
+#cask "font-fira-sans-condensed", args: { appdir: "/Applications", no_quarantine: true }
+#cask "font-fira-sans-extra-condensed", args: { appdir:"/Applications", no_quarantine: true }
+#cask "font-firago", args: { appdir: "/Applications", no_quarantine: true }
+#cask "font-jetbrains-mono", args: { appdir: "/Applications", no_quarantine: true }
+#cask "font-lekton-nerd-font", args: { appdir: "/Applications", no_quarantine: true }
+#cask "font-mononoki", args: { appdir: "/Applications", no_quarantine: true }
+#cask "font-recursive-mono-nerd-font", args: { appdir: "/Applications", no_quarantine: true }
+#cask "font-ubuntu-sans-nerd-font", args: { appdir: "/Applications", no_quarantine: true }
+#cask "font-zed-mono-nerd-font", args: { appdir: "/Applications", no_quarantine: true }
 # cask "fork", args: { appdir: "/Applications", no_quarantine: true }
 # cask "gstreamer-development", args: { appdir: "/Applications", no_quarantine: true }
 # cask "gstreamer-runtime", args: { appdir: "/Applications", no_quarantine: true }
@@ -186,37 +186,37 @@ cask "warp", args: { appdir: "/Applications", no_quarantine: true }
 cask "wine-stable", args: { appdir: "/Applications", no_quarantine: true }
 
 # 'mas install'
-mas "Address Book Clearout", id: 442397431
-mas "Apple Configurator", id: 1037126344
-mas "Betternet VPN", id: 1028905953
-mas "CloudMounter", id: 1130254674
-mas "CopyClip", id: 595191960
-mas "Developer", id: 640199958
-mas "EnhanceFox", id: 1544212575
-mas "Essentials", id: 1588151344
-mas "Grammarly for Safari", id: 1462114288
-mas "Hand Mirror", id: 1502839586
-mas "iMazing Profile Editor", id: 1487860882
-mas "MacFamilyTree 9", id: 1458866808
-mas "Magnet", id: 441258766
-mas "Messenger", id: 1480068668
-mas "Microsoft Remote Desktop", id: 1295203466
-mas "Model Pro", id: 1464222390
-mas "Numbers", id: 409203825
-mas "OTP Auth", id: 1471867429
-mas "Pages", id: 409201541
-mas "Parallels Desktop", id: 1085114709
-mas "PayPal Honey", id: 1472777122
-mas "Pixelmator Pro", id: 1289583905
-mas "Shopping for Amazon", id: 1095562398
-mas "Sticklets", id: 1633701470
-mas "Sticky Notes", id: 1150887374
-mas "The Unarchiver", id: 425424353
-mas "Transcribe", id: 1241342461
-mas "Transporter", id: 1450874784
-mas "Twitter", id: 1482454543
-mas "Universe", id: 1211437633
-mas "Xcode", id: 497799835
+#mas "Address Book Clearout", id: 442397431
+#mas "Apple Configurator", id: 1037126344
+#mas "Betternet VPN", id: 1028905953
+#mas "CloudMounter", id: 1130254674
+#mas "CopyClip", id: 595191960
+#mas "Developer", id: 640199958
+#mas "EnhanceFox", id: 1544212575
+#mas "Essentials", id: 1588151344
+#mas "Grammarly for Safari", id: 1462114288
+#mas "Hand Mirror", id: 1502839586
+#mas "iMazing Profile Editor", id: 1487860882
+#mas "MacFamilyTree 9", id: 1458866808
+#mas "Magnet", id: 441258766
+#mas "Messenger", id: 1480068668
+#mas "Microsoft Remote Desktop", id: 1295203466
+#mas "Model Pro", id: 1464222390
+#mas "Numbers", id: 409203825
+#mas "OTP Auth", id: 1471867429
+#mas "Pages", id: 409201541
+#mas "Parallels Desktop", id: 1085114709
+#mas "PayPal Honey", id: 1472777122
+#mas "Pixelmator Pro", id: 1289583905
+#mas "Shopping for Amazon", id: 1095562398
+#mas "Sticklets", id: 1633701470
+#mas "Sticky Notes", id: 1150887374
+#mas "The Unarchiver", id: 425424353
+#mas "Transcribe", id: 1241342461
+#mas "Transporter", id: 1450874784
+#mas "Twitter", id: 1482454543
+#mas "Universe", id: 1211437633
+#mas "Xcode", id: 497799835
 
 # 'vscode --install-extension'
 vscode "ahkohd.glance"
